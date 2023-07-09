@@ -1,0 +1,30 @@
+.map-page {
+    padding: 20px;
+  }
+  
+  h1 {
+    text-align: center;
+  }
+  
+  .map-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .customer-section {
+    margin-top: 20px;
+  }
+  
+  @media (min-width: 768px) {
+    .map-container {
+      flex-direction: row;
+      align-items: flex-start;
+    }
+  
+    .customer-section {
+      margin-left: 20px;
+      width: 300px;
+    }
+  }
+  

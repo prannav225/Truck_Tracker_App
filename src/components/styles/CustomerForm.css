@@ -1,0 +1,41 @@
+.customer-form {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid grey;
+  border-radius: 1em;
+  backdrop-filter: blur(10px);
+}
+
+.customer-form label {
+  display: block;
+  width: 100%;
+  margin: px auto;
+}
+.customer-form input {
+  height: 30px;
+  font-size: 16px;
+  border: 1px solid gray;
+  outline: none;
+  border-radius: 2em;
+  padding-left: 10px;
+  padding-right: 0;
+}
+button {
+  background-color: #4e50fb;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  width: 10rem;
+  height: 2.5em;
+  border-radius: 2em;
+  margin: 1em;
+}
+
+@media (min-width: 768px) {
+  .customer-form {
+    max-width: 500px;
+  }
+}

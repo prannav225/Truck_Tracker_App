@@ -1,5 +1,21 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap");
+html {
+  margin: 0;
+  padding: 0;
+  background: url("https://img.freepik.com/free-vector/autonomous-delivery-abstract-concept-illustration_335657-2259.jpg?size=626&ext=jpg");
+  background-repeat: no-repeat;
+  background-size: 30em;
+  background-position: 60em 10em;
+  height: 90vh;
+}
 .App {
   text-align: center;
+  font-family: "Open Sans", sans-serif;
+  background: url("https://img.freepik.com/free-vector/customer-using-mobile-app-tracking-order-delivery_74855-5229.jpg?w=1380&t=st=1688733811~exp=1688734411~hmac=b07c9b609b182bc103a10ee4cde6f359b1a0f07a1d7c4978cdafeada7828ea92");
+  background-repeat: no-repeat;
+  background-size: 46em;
+  background-position: 0em 20em;
+  height: 100vh;
 }
 
 .App-logo {
@@ -35,4 +51,8 @@
   to {
     transform: rotate(360deg);
   }
+}
+a {
+  text-decoration: none;
+  color: #282c34;
 }
