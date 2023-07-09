@@ -11,7 +11,7 @@ const App = () => {
       <h1>Truck Tracking App</h1>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Login />} />
+          <Route path="/Truck_Tracker_App" element={<Login />} />
           <Route path="/otp-verify" element={<OTPVerification />} />
           <Route path="/map" element={<MapPage />} />
         </Routes>
