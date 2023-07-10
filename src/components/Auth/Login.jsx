@@ -8,7 +8,7 @@ const Login = () => {
   const navigate = useNavigate();
 
   const next = () => {
-    navigate("/otp-verify");
+    navigate("/Truck_Tracker_Ap/otp-verify");
   };
 
   const resetInput = () => {

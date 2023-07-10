@@ -35,7 +35,7 @@ const MapPage = () => {
       <div className="map-container">
         <Map customers={customers} driverLocation={driverLocation} />
         <div className="customer-section">
-          {location.pathname === "/map" && (
+          {location.pathname === "/Truck_Tracker_Ap/map" && (
             <>
               
               <CustomerForm onAddCustomer={handleAddCustomer} />
