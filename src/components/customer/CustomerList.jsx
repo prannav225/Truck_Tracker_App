@@ -1,16 +1,30 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "../styles/CustomerList.css";
 
-const CustomerList = ({ customers }) => {
-
+const CustomerList = ({ customers, driverLocation, setCustomers, map }) => {
   const handleDirectionsClick = (customer) => {
-    const origin = "current location"; // Replace with the driver's current location
-    const destination = `${customer.location.lat},${customer.location.lng}`;
-    const url = `https://www.google.com/maps/dir/?api=1&origin=${origin}&destination=${destination}`;
+    if (driverLocation && driverLocation.lat && driverLocation.lng) {
+      const origin = `${driverLocation.lat},${driverLocation.lng}`;
+      const destination = `${customer.location.lat},${customer.location.lng}`;
+      const url = `https://www.google.com/maps/dir/?api=1&origin=${origin}&destination=${destination}`;
   
-    window.open(url, "_blank");
+      // Open the Google Maps directions URL in a new window
+      window.open(url, "_blank");
+    }
   };
   
+
+  useEffect(() => {
+    const storedCustomers = localStorage.getItem("customers");
+    if (storedCustomers) {
+      const parsedCustomers = JSON.parse(storedCustomers);
+      setCustomers(parsedCustomers);
+    }
+  }, [setCustomers]);
+
+  useEffect(() => {
+    localStorage.setItem("customers", JSON.stringify(customers));
+  }, [customers]);
 
   return (
     <div className="customer-list">

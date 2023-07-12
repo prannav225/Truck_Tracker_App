@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import '../styles/CustomerForm.css';
-
+import "../styles/CustomerForm.css";
 
 const CustomerForm = ({ onAddCustomer }) => {
   const [name, setName] = useState("");
@@ -37,46 +36,49 @@ const CustomerForm = ({ onAddCustomer }) => {
     setPhoneNumber("");
     setLatitude("");
     setLongitude("");
+
+    // Retrieve the customers from local storage
+    const storedCustomers = localStorage.getItem("customers");
+    const parsedCustomers = storedCustomers ? JSON.parse(storedCustomers) : [];
+    const updatedCustomers = [...parsedCustomers, customer];
+
+    // Store the updated customer list in local storage
+    localStorage.setItem("customers", JSON.stringify(updatedCustomers));
   };
 
   return (
     <div className="customer-form">
       <h2>Add Customer</h2>
-    <form onSubmit={handleSubmit}>
-      <label htmlFor="name">Name:</label>
-      <input
-        type="text"
-        id="name"
-        value={name}
-        onChange={handleNameChange}
-      />
-      <label htmlFor="phoneNumber">Phone Number:</label>
-      <input
-        type="tel"
-        id="phoneNumber"
-        maxLength={10}
-        minLength={10}
-        value={phoneNumber}
-        onChange={handlePhoneNumberChange}
-      />
-      <label htmlFor="latitude">Latitude:</label>
-      <input
-        type="text"
-        id="latitude"
-        value={latitude}
-        onChange={handleLatitudeChange}
-      />
-      <label htmlFor="longitude">Longitude:</label>
-      <input
-        type="text"
-        id="longitude"
-        value={longitude}
-        onChange={handleLongitudeChange}
-      />
-      <button type="submit">Add Customer</button>
-    </form>
-  </div>
-);
+      <form onSubmit={handleSubmit}>
+        <label htmlFor="name">Name:</label>
+        <input type="text" id="name" value={name} onChange={handleNameChange} />
+        <label htmlFor="phoneNumber">Phone Number:</label>
+        <input
+          type="tel"
+          id="phoneNumber"
+          maxLength={10}
+          minLength={10}
+          value={phoneNumber}
+          onChange={handlePhoneNumberChange}
+        />
+        <label htmlFor="latitude">Latitude:</label>
+        <input
+          type="text"
+          id="latitude"
+          value={latitude}
+          onChange={handleLatitudeChange}
+        />
+        <label htmlFor="longitude">Longitude:</label>
+        <input
+          type="text"
+          id="longitude"
+          value={longitude}
+          onChange={handleLongitudeChange}
+        />
+        <button type="submit">Add Customer</button>
+      </form>
+    </div>
+  );
 };
 
 export default CustomerForm;
